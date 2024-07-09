@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ResourceBundleManager">
+    <file url="file://$PROJECT_DIR$/Spring4/src/main/resources/strings_eng.properties" />
+    <file url="file://$PROJECT_DIR$/Spring4/src/main/resources/strings_rus.properties" />
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/Spring4/src/main/resources/strings_ENG.properties" />
+      <file value="file://$PROJECT_DIR$/Spring4/src/main/resources/strings_RUS.properties" />
+      <base-name>strings</base-name>
+    </custom-resource-bundle>
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/Spring4/src/main/resources/strings_ eng.properties" />
+      <file value="file://$PROJECT_DIR$/Spring4/src/main/resources/strings__rus.properties" />
+      <base-name>strings</base-name>
+    </custom-resource-bundle>
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/Spring4/src/main/resources/strings_eng.properties" />
+      <file value="file://$PROJECT_DIR$/Spring4/src/main/resources/strings_rus.properties" />
+      <base-name>strings</base-name>
+    </custom-resource-bundle>
+  </component>
+</project>

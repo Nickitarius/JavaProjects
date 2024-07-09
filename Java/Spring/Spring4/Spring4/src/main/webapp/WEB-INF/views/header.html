@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+    <a class="navbar-brand" href="#" th:text="#{header.siteName}"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/}" th:text="#{header.home}"><span class="sr-only">(current)</span></a>
+            </li>
+
+<!--            <li class="nav-item">-->
+<!--                <a th:if="${#request.getQueryString().isEmpty()}" href="?lang=eng" class="nav-link">ENG</a>-->
+<!--                <a th:unless="${#request.getQueryString().isEmpty()}" th:href="" class="nav-link">ENG</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a th:if="${#request.getQueryString().isEmpty()}" href="?lang=rus" class="nav-link">RUS</a>-->
+<!--                <a th:unless="${#request.getQueryString().isEmpty()}" href="&lang=rus" class="nav-link">RUS</a>-->
+<!--            </li>-->
+
+
+            <li class="nav-item">
+                <a href="?lang=eng" class="nav-link">ENG</a>
+            </li>
+            <li class="nav-item">
+                <a href="?lang=rus" class="nav-link">RUS</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+</body>
+</html>

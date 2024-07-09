@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div th:replace="../views/header :: header"></div>
+
+<div class="container">
+    <h2 class="text-info">Add new Airline</h2>
+    <form action="#" method="post"
+          th:object="${airline}">
+        <label for="airline-flightNumber">Flight Number</label>
+        <input id="airline-flightNumber" class="form-control" th:field="*{flightNumber}"/>
+        <p th:if="${#fields.hasErrors('flightNumber')}"
+           class="text-danger"
+           th:errors="${airline.flightNumber}"></p>
+        <label for="airline-destination">Destination</label>
+        <select id="airline-destination" class="form-control" th:field="*{destination}">
+            <option th:each="destination: ${T(airlineManager.model.Destinations).values()}"
+                    th:value="${destination}" th:text="${destination}"></option>
+        </select>
+        <p th:if="${#fields.hasErrors('destination')}"
+           class="text-danger"
+           th:errors="${airline.destination}"></p>
+        <label for="airline-time">Time of departure</label>
+        <input id="airline-time" class="form-control" type="time" th:field="*{time}">
+        <p th:if="${#fields.hasErrors('time')}"
+           class="text-danger"
+           th:errors="${airline.time}"></p>
+        <label for="sunday">Sunday</label>
+        <input id="sunday" type="checkbox" class="form-control" th:field="*{availableDays[0]}">
+        <label for="monday">Monday</label>
+        <input id="monday" class="form-control" type="checkbox" th:field="*{availableDays[1]}">
+        <label for="tuesday">Tuesday</label>
+        <input id="tuesday" class="form-control" type="checkbox" th:field="*{availableDays[2]}">
+        <label for="wednesday">Wednesday</label>
+        <input id="wednesday" class="form-control" type="checkbox" th:field="*{availableDays[3]}">
+        <label for="thursday">Thursday</label>
+        <input id="thursday" class="form-control" type="checkbox" th:field="*{availableDays[4]}">
+        <label for="friday">Friday</label>
+        <input id="friday" class="form-control" type="checkbox" th:field="*{availableDays[5]}">
+        <label for="saturday">Saturday</label>
+        <input id="saturday" class="form-control" type="checkbox" th:field="*{availableDays[6]}">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

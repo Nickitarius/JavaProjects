@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.Country" table="countries">
+        <id column="code" name="code" type="string">
+            <generator class="identity"/>
+        </id>
+        <property column="continent" name="continent" type="string"/>
+        <property column="name" name="name" type="string"/>
+        <property column="surface_area" name="surfaceArea" type="double"/>
+        <property column="population" name="population" type="integer"/>
+        <many-to-one foreign-key="capital" name="capital" class="Model.City" unique="true" cascade="save-update"/>
+    </class>
+</hibernate-mapping>

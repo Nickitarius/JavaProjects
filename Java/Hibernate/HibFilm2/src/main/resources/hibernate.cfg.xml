@@ -1,0 +1,30 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQL5Dialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/imdb_small
+        </property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="current_session_context_class">
+            thread
+        </property>
+        <property name="show_sql">
+            true
+        </property>
+        <!--        <property name="hibernate.hbm2ddl.auto">create</property>-->
+        <!-- Anotations-->
+        <mapping class="hibimdb.Movie"/>
+        <mapping class="hibimdb.Director"/>
+        <mapping class="hibimdb.Actor"/>
+        <mapping class="hibimdb.Role"/>
+        <!-- XLM-mapping-->
+        <!--        <mapping resource="User.hbm.xml"/> -->
+    </session-factory>
+</hibernate-configuration>
